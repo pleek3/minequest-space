@@ -1,18 +1,20 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <div class="navbar-brand ms-2 user-select-none" href="#">
-      <a>MineQuest</a>
-      <a>Space</a>
-    </div>
+
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <div class="navbar-brand ms-2 user-select-none" href="#">
+      <a>MineQuest</a>
+      <a>Space</a>
+    </div>
+
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <form class="w-50 p-3 mx-auto">
         <input type="text" #player class="me-2 input-rectangle p-2"
-               placeholder="Suche nach einem Spieler" (keyup.enter)="search(player.value)"
-               (blur)="search(player.value); player.value =''">
+               placeholder="Suche nach einem Spieler" (keyup.enter)="search(player.value); player.value=''"
+               (blur)="search(player.value); player.value =''" name="q">
       </form>
 
       <div class="navbar-nav me-2 mb-lg-0 user-select-none">
@@ -21,14 +23,27 @@
         <a class="nav-link" routerLink="shop">Shop</a>
         <!--  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
       </div>
+    </div>
 
-      <div [class.account]="this.getAccountStatus() == true" [class.sign-in-button]="!getAccountStatus() == false"
-           class="me-2">
-        <button *ngIf="!this.getAccountStatus()" mat-raised-button color="primary" routerLink="login">Anmelden</button>
+    <div class="me-2">
+      <button *ngIf="!this.getAccountStatus()" mat-raised-button color="primary" class="sign-in-button"
+              routerLink="login">Anmelden
+      </button>
 
-
-
+      <div *ngIf="this.getAccountStatus()" class="account">
+        <div class="btn-group dropstart"
+             style="min-width: 100%; min-height: 100%; z-index: 3;">
+          <a class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" style="opacity: 0;"
+             aria-expanded="false">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
       </div>
     </div>
+
   </div>
 </nav>

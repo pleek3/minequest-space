@@ -9,19 +9,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './MaterialComponent';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './partials/navbar/navbar.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   exports: [MaterialModule],
   providers: [],

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router, RouterModule} from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -8,13 +8,9 @@ import {Router, RouterModule} from "@angular/router";
 })
 export class NavbarComponent implements OnInit {
 
-  isLoggedIn = false;
+  isLoggedIn = true;
 
   constructor(private router: Router) {
-  }
-
-  changeAccountStatus() {
-    this.isLoggedIn = !this.isLoggedIn;
   }
 
   getAccountStatus() {
@@ -26,7 +22,11 @@ export class NavbarComponent implements OnInit {
 
   search(name: String) {
     if (name)
-      console.log(name);
+      setTimeout(() => {
+        this.router.navigateByUrl('').then(()  => {
+          this.router.navigateByUrl("/users/"+name);
+        });
+      }, 100);
   }
 
 }

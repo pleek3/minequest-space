@@ -1,0 +1,41 @@
+<div *ngIf="!userDetails" style="margin-top: 20px; background-color: #45597e; color: black">
+  <h1>Der Spieler wurde nicht gefunden.</h1>
+</div>
+
+<div class="container" *ngIf="userDetails" style="margin-top: 50px">
+  <div class="row justify-content-center">
+    <div class="text-center text-wrap">
+      <p style="color: #FFFFFF; font-size: 40px; line-height: 10px;">Die letzten Kämpfe</p>
+      <p style="color: rgba(255, 255, 255, 0.7);">Hier siehst du die letzten erfolgten Kämpfe des Spielers</p>
+    </div>
+
+
+    <div class="row row-cols-2 justify-content-center">
+      <div *ngFor="let lf of userDetails.last_fights" class="col-5 fight-detail"
+           style="background-color: rgba(66, 66, 66, 1);
+           color: black; margin-right: 30px;
+           margin-top: 20px;
+           border-radius: 10px;">
+        <div class="row justify-content-end">
+          <div class="col-4">
+            <p class="text-end" style="color:white">{{lf.timestamp}}</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="text-center text-wrap">
+            <p style="line-height: 10px; color: white">
+              <span style="color:green;">{{lf.winner}}</span>
+            vs.
+              <span style="color:red;"> {{lf.looser}} </span>
+            </p>
+            <p style="line-height: 3px; margin-bottom: 45px; color: rgba(255, 255, 255, 0.7)">Der Kampf ging {{lf.fight_time}}</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
