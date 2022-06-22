@@ -1,0 +1,8 @@
+html, body {
+  height: 100%;
+  background-color: rgba(41, 41, 41, 1) !important;
+}
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../node_modules/bootstrap/scss/bootstrap";
+

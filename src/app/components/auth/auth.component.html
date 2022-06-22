@@ -1,0 +1,59 @@
+<div class="container">
+
+  <div class="row justify-content-center">
+    <div *ngIf="isVisited" class="col-sm-4 more-infos-rectangle">
+      <p class="fw-bold text-title">Wie funktioniert die Anmeldung?</p>
+      <p class="fw-light text-break text-wrap info-text">Betrete den MineQuest Server unter minequest.com, und
+        verifiziere dich auf unserem Discord.</p>
+      <p class="fw-light text-break text-wrap info-text"> Nachdem Verifizieren bekommst du einen Verifikationstoken. Mit
+        diesem Token kannst du dich hier auf der Webseite anmelden, dein Profil bearbeiten, Clan kämpfe
+        beginnen und vieles mehr.</p>
+
+      <p class="fw-bold text-title">Was passiert, wenn ich meinen Minecraft-Namen ändere?</p>
+      <p class="fw-light text-break text-wrap info-text">Melde dich hier mit deinem alten Minecraft-Namen an, unser
+        System bemerkt die Namensändern, und schon kannst du dich das nächste Mal mit deinem neuen Namen anmelden.</p>
+    </div>
+    <div class="col-sm-4" style="background-color: rgba(66, 66, 66, 1); margin-top: 175px; min-height: 30rem">
+      <div class="row justify-content-center">
+        <div class="col-8 primary-text">
+          <p>MineQuest</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-3 second-text">
+          <span>S</span>
+          <span>p</span>
+          <span>a</span>
+          <span>c</span>
+          <span>e</span>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-10" style="margin-top: 80px; color: #ffff;">
+          <mat-label>Minecraft-Name</mat-label>
+          <input matInput type="text" class="auth-input-rectangle">
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-10" style="margin-top: 50px; color: #ffff;">
+          <label style="margin-bottom: 5px">Token</label>
+          <form>
+            <input type="text" class="auth-input-rectangle">
+          </form>
+        </div>
+      </div>
+
+      <div class="row justify-content-sm-center">
+        <div class="col-md-auto">
+          <p style="font-size:small" class="open-component-text link-primary" (click)="checkVisited()">Neu hier?</p>
+        </div>
+        <div class="col-md-auto">
+          <button mat-raised-button color="primary" class="button">Anmelden</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
