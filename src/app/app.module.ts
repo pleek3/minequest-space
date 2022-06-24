@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './partials/navbar/navbar.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import {FormsModule} from "@angular/forms";
+import { CrateDetailComponent } from './components/crate-detail/crate-detail.component';
+import { CratesComponent } from './components/crates/crates.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {FormsModule} from "@angular/forms";
     AuthComponent,
     HomeComponent,
     NavbarComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    CrateDetailComponent,
+    CratesComponent
   ],
   imports: [
     BrowserModule,

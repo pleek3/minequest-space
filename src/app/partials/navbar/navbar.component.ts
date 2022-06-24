@@ -22,11 +22,9 @@ export class NavbarComponent implements OnInit {
 
   search(name: String) {
     if (name)
-      setTimeout(() => {
         this.router.navigateByUrl('').then(()  => {
           this.router.navigateByUrl("/users/"+name);
         });
-      }, 100);
   }
 
 }

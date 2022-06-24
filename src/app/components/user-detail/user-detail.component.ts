@@ -24,9 +24,4 @@ export class UserDetailComponent implements OnInit {
     const name = String(this.route.snapshot.paramMap.get('name'));
     this.service.getDetail(name).subscribe(value => this.userDetails = value);
   }
-
-  goBack(): void {
-    this.location.back();
-  }
-
 }

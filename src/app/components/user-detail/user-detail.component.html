@@ -9,10 +9,9 @@
       <p style="color: rgba(255, 255, 255, 0.7);">Hier siehst du die letzten erfolgten Kämpfe des Spielers</p>
     </div>
 
-
     <div class="row row-cols-2 justify-content-center">
-      <div *ngFor="let lf of userDetails.last_fights" class="col-5 fight-detail"
-           style="background-color: rgba(66, 66, 66, 1);
+      <div *ngFor="let lf of userDetails.last_fights" class="col-5 fight-detail component-box"
+           style="
            color: black; margin-right: 30px;
            margin-top: 20px;
            border-radius: 10px;">
@@ -24,12 +23,19 @@
 
         <div class="row justify-content-center">
           <div class="text-center text-wrap">
-            <p style="line-height: 10px; color: white">
-              <span style="color:green;">{{lf.winner}}</span>
-            vs.
-              <span style="color:red;"> {{lf.looser}} </span>
+            <p style="line-height: 3px; color: white; font-size: 25px; margin-top: 5px">
+              <span style="margin-right: 5px">
+               <img src="{{lf.winner.avatar_url}}" alt="winner avatar">
+              </span>
+              <span style="color:green;">{{lf.winner.name}}</span>
+              vs.
+              <span style="color:red;"> {{lf.looser.name}} </span>
+              <span>
+               <img src="{{lf.looser.avatar_url}}" alt="looser avatar">
+              </span>
             </p>
-            <p style="line-height: 3px; margin-bottom: 45px; color: rgba(255, 255, 255, 0.7)">Der Kampf ging {{lf.fight_time}}</p>
+            <p style="line-height: 1px; margin-bottom: 45px; color: rgba(255, 255, 255, 0.7); font-size: 15px">Der Kampf
+              ging {{lf.fight_time}}</p>
           </div>
         </div>
 

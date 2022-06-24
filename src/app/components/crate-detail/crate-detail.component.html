@@ -1,0 +1,58 @@
+<div class="container" *ngIf="crateDetail">
+  <div class="row justify-content-start">
+
+    <div class="col-7">
+      <div class="col-12 overview">
+        <div class="w-auto info-box">
+          <h6 class="h-auto back-button"><- Zurück</h6>
+          <div class="row">
+            <img src="{{crateDetail.image_src}}" alt="crate image" class="crate-img">
+            <div class="col">
+              <h4 class="crate-name">{{crateDetail.name}}</h4>
+
+              <button mat-raised-button color="primary" class="spin-button">Demo Spin</button>
+             <!-- <h4 class="crate-name">Under</h4> -->
+            </div>
+
+            <!--   <div class="col">
+                 <h4 class="crate-name">Next</h4>
+               </div> -->
+
+             </div>
+           </div>
+         </div>
+
+         <div class="col-12 crate-opening">
+           <h1 class="text-center">Coming soon</h1>
+         </div>
+       </div>
+
+       <div class="col-5">
+         <div class="info-box">
+           <h4 class="crate-name title">Inhalt</h4>
+           <div class="row row-cols-2 justify-content-start">
+             <div *ngFor="let content of crateDetail.content" class="content-box">
+               <div class="row justify-content-center">
+                 <div class="col-auto content-infos">
+                   <p class="content-chance w-25">{{content.chance}}%</p>
+                   <img src="{{content.image_src}}" alt="content image" class="content-img">
+                   <p class="text-center w-auto content-name">{{content.name}}</p>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+
+     <div class="row live-drop">
+       <h4 class="title">Livedrop</h4>
+       <div *ngFor="let content of crateDetail.content" class="col-2">
+         <div class="col-auto live-drop-info">
+           <img src="{{content.image_src}}" alt="content image" class="live-drop-img">
+           <p class="text-center w-auto content-name">{{content.name}}</p>
+         </div>
+       </div>
+     </div>
+   </div>

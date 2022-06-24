@@ -8,47 +8,75 @@ import {LastFightDetail} from "../components/user-detail/LastFightDetail";
 })
 export class UserDetailService {
 
-  //todo: change to backend service
+  AVATAR_API_URL_SMALL = "https://crafatar.com/avatars/$uuid$?size=55.png";
 
+  //todo: change to backend service
   private USERS: UserDetail[] = [
-    this.createUserDetail("TeamHardcore"),
-    this.createUserDetail("Meezee"),
-    this.createUserDetail("Rysefoxx"),
-    this.createUserDetail("iRaphi"),
+    {
+      name: "WKChris",
+      global_deaths: 122992,
+      global_kills: -3,
+      global_trophies: -123,
+      uuid: "07d933b6-da0d-4aa1-bbfd-3c0ed5e0921a",
+      avatar_url: this.AVATAR_API_URL_SMALL.replace("$uuid$", "07d933b6-da0d-4aa1-bbfd-3c0ed5e0921a"),
+      // @ts-ignore
+      last_fights: []
+    } as UserDetail,
+    {
+      name: "TeamHardcore",
+      global_deaths: 122992,
+      global_kills: -3,
+      global_trophies: -123,
+      uuid: "dad65097-f091-4531-8431-42e2fb2bd80c",
+      avatar_url:this.AVATAR_API_URL_SMALL.replace("$uuid$","dad65097-f091-4531-8431-42e2fb2bd80c"),
+      // @ts-ignore
+      last_fights: []
+    } as UserDetail,
   ];
 
+  private FIGHTS: LastFightDetail[] = [
+    {
+      fight_time: this.randomNumber(2, 20) + " Minuten",
+      timestamp: "Vor 10 Minuten",
+      winner: this.USERS[1],
+      looser: this.USERS[0],
+      trophies: this.randomNumber(0, 60)+" Tophäen",
+    },
+    {
+      fight_time: this.randomNumber(2, 20) + " Minuten",
+      timestamp: "Vor 10 Minuten",
+      winner: this.USERS[1],
+      looser: this.USERS[0],
+      trophies: this.randomNumber(0, 60)+" Tophäen",
+    },
+    {
+      fight_time: this.randomNumber(2, 20) + " Minuten",
+      timestamp: "Vor 10 Minuten",
+      winner: this.USERS[1],
+      looser: this.USERS[0],
+      trophies: this.randomNumber(0, 60)+" Tophäen",
+    },
+    {
+      fight_time: this.randomNumber(2, 20) + " Minuten",
+      timestamp: "Vor 10 Minuten",
+      winner: this.USERS[1],
+      looser: this.USERS[0],
+      trophies: this.randomNumber(0, 60)+" Tophäen",
+    },
+];
+
   constructor() {
+    this.USERS[0].last_fights.push(this.FIGHTS[0]);
+    this.USERS[0].last_fights.push(this.FIGHTS[1]);
+    this.USERS[0].last_fights.push(this.FIGHTS[2]);
+    this.USERS[0].last_fights.push(this.FIGHTS[3]);
+    this.USERS[0].last_fights.push(this.FIGHTS[0]);
+    this.USERS[1].last_fights.push(this.FIGHTS[0]);
   }
 
   public getDetail(name: string) {
     const user = this.USERS.find(value => value.name == name)!;
     return of(user);
-  }
-
-  private createUserDetail(name: string): UserDetail {
-    return {
-      name: name,
-      global_deaths: this.randomNumber(0, 10),
-      global_kills: this.randomNumber(0, 70),
-      global_trophies: this.randomNumber(200, 1200),
-      last_fights: [
-        this.createFightDetail("TeamHardcore", name, "Vor 2 Minuten"),
-        this.createFightDetail("TeamHardcore", name, "Vor 1 Stunde"),
-        this.createFightDetail("TeamHardcore", name, "Vor 2 Stunde"),
-        this.createFightDetail("TeamHardcore", name, "Vor 3 Stunde"),
-        this.createFightDetail("TeamHardcore", name, "Vor 4 Stunde")
-      ]
-    };
-  }
-
-  private createFightDetail(winner: string, looser: string, timestamp: string): LastFightDetail {
-    return {
-      fight_time: this.randomNumber(2, 20) + " Minuten",
-      timestamp: timestamp,
-      looser: looser,
-      winner: winner,
-      trophies: this.randomNumber(0, 60)+" Tophäen",
-    };
   }
 
   randomNumber(min: number, max: number) {

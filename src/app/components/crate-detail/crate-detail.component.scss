@@ -1,0 +1,133 @@
+$componentbg: rgba(48, 48, 59, 0.5);
+
+.container {
+  margin-top: 100px;
+
+  .title {
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: .5rem;
+    font-family: var(--font-accent);
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .overview {
+    height: max-content;
+    margin-bottom: 30px;
+  }
+
+  .info-box {
+    background-color: $componentbg;
+    box-shadow: 0 4px #1a1d22, 0 20px 50px #00000073, inset 0 1px #252a30;
+    border-radius: .625rem;
+
+    .back-button {
+      padding-top: 10px;
+      padding-left: 10px;
+      cursor: pointer;
+      height: fit-content;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: .5rem;
+      font-family: var(--font-accent);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+
+    .row {
+      .crate-img {
+        height: 200px;
+        width: 200px;
+        margin-left: 20px;
+      }
+
+      .crate-name {
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: .5rem;
+        font-family: var(--font-accent);
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .spin-button {
+        margin-top: 25px;
+        color: white;
+        background-color: #252a30;
+      }
+    }
+
+    .content-box {
+      transition: all .2s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1) !important;
+      }
+
+      .content-infos {
+        .content-img {
+          height: 186px;
+          width: 174px;
+          object-fit: contain;
+        }
+
+        .content-chance {
+          text-transform: uppercase;
+          color: #fff;
+          margin-bottom: .5rem;
+          font-family: var(--font-accent);
+          font-weight: 400;
+          line-height: 1;
+        }
+
+        .content-name {
+          text-transform: uppercase;
+          color: #fff;
+          margin-bottom: .5rem;
+          font-family: var(--font-accent);
+          font-weight: 900;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  .crate-opening {
+    background-color: $componentbg;
+    box-shadow: 0 4px #1a1d22, 0 20px 50px #00000073, inset 0 1px #252a30;
+    border-radius: .625rem;
+    height: 200px;
+  }
+
+  .live-drop {
+    background-color: $componentbg;
+    box-shadow: 0 4px #1a1d22, 0 20px 50px #00000073, inset 0 1px #252a30;
+    border-radius: .625rem;
+    margin-bottom: 50px;
+    margin-top: 20px;
+
+    .live-drop-img {
+      height: 200px;
+      width: 200px;
+    }
+
+    .live-drop-info {
+      background-color: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 4px #1a1d22, 0 20px 50px #00000073, inset 0 1px #252a30;
+      border-radius: .625rem;
+
+      .content-name {
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: .5rem;
+        font-family: var(--font-accent);
+        font-weight: 600;
+        line-height: 1;
+      }
+    }
+  }
+
+}
