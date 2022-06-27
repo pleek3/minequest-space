@@ -7,7 +7,6 @@ import {CrateDetailComponent} from "./components/crate-detail/crate-detail.compo
 import {CratesComponent} from "./components/crates/crates.component";
 
 const routes: Routes = [
-
   {path: 'login', component: AuthComponent},
   {path: 'users', component: UserDetailComponent},
   {path: 'users/:name', component: UserDetailComponent},
